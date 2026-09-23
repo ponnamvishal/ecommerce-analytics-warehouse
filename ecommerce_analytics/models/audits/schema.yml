@@ -1,0 +1,14 @@
+version: 2
+
+models:
+  - name: audit_orders_without_items
+    description: >
+      Data-quality audit identifying orders without associated order-item
+      records when the order status is not expected to lack item records.
+
+    columns:
+      - name: order_id
+        description: Unique identifier of the order.
+
+      - name: order_status
+        description: Current status of the order.

@@ -1,0 +1,36 @@
+# Python
+.venv/
+__pycache__/
+*.py[cod]
+*.pyo
+
+# Environment files
+.env
+.env.*
+
+# DuckDB databases
+*.duckdb
+*.duckdb.wal
+*.duckdb.tmp
+
+# dbt generated files
+target/
+dbt_packages/
+logs/
+partial_parse.msgpack
+
+# Raw data
+data/raw/*.csv
+
+# Temporary project inspection files
+tree.txt
+project_tree.txt
+
+# OS / IDE
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+
+# Power BI temporary/backup files
+*.pbit

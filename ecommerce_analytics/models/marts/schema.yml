@@ -1,0 +1,167 @@
+version: 2
+
+models:
+  - name: mart_customer_summary
+    description: >
+      Customer-level analytical mart summarizing purchasing behavior,
+      order activity, product revenue, freight, total revenue, and
+      customer purchase history.
+
+    columns:
+      - name: customer_unique_id
+        description: Unique identifier representing the customer across orders.
+        tests:
+          - not_null
+          - unique
+
+      - name: total_orders
+        description: Number of distinct orders associated with the customer.
+        tests:
+          - not_null
+
+      - name: delivered_orders
+        description: Number of distinct orders with delivered status.
+
+      - name: total_items
+        description: Number of order-item records associated with the customer.
+        tests:
+          - not_null
+
+      - name: total_product_revenue
+        description: Sum of product prices excluding freight.
+
+      - name: total_freight
+        description: Total freight value associated with the customer's orders.
+
+      - name: total_revenue
+        description: Product revenue including freight.
+        tests:
+          - not_null
+
+      - name: average_order_value
+        description: Total revenue divided by the number of distinct orders.
+        tests:
+          - not_null
+
+      - name: first_order_date
+        description: Timestamp of the customer's earliest order.
+
+      - name: last_order_date
+        description: Timestamp of the customer's most recent order.
+
+      - name: customer_lifetime_days
+        description: Number of days between the customer's first and last order.
+
+  - name: mart_daily_sales
+    description: >
+      Daily sales performance mart containing order counts, item counts,
+      product revenue, freight, total revenue, and average order value
+      aggregated by order purchase date.
+
+    columns:
+      - name: sales_date
+        description: Calendar date derived from the order purchase timestamp.
+        tests:
+          - not_null
+          - unique
+
+      - name: total_orders
+        description: Number of distinct orders purchased on the sales date.
+        tests:
+          - not_null
+
+      - name: total_items
+        description: Number of order-item records purchased on the sales date.
+        tests:
+          - not_null
+
+      - name: product_revenue
+        description: Sum of product prices excluding freight.
+        tests:
+          - not_null
+
+      - name: total_freight
+        description: Total freight value for the sales date.
+        tests:
+          - not_null
+
+      - name: total_revenue
+        description: Product revenue including freight.
+        tests:
+          - not_null
+
+      - name: average_order_value
+        description: Total revenue divided by the number of distinct orders.
+        tests:
+          - not_null
+
+  - name: mart_product_performance
+    description: >
+      Product-level analytical mart containing order counts, item counts,
+      product revenue, freight, total revenue, pricing metrics, category
+      information, and product attributes.
+
+    columns:
+      - name: product_id
+        description: Unique identifier of the product.
+        tests:
+          - not_null
+          - unique
+
+      - name: category_name
+        description: Preferred product category name used for analysis.
+
+      - name: category_name_english
+        description: English product category name when available.
+
+      - name: total_orders
+        description: Number of distinct orders containing the product.
+        tests:
+          - not_null
+
+      - name: total_items_sold
+        description: Number of order-item records associated with the product.
+        tests:
+          - not_null
+
+      - name: product_revenue
+        description: Sum of product prices excluding freight.
+        tests:
+          - not_null
+
+      - name: total_freight
+        description: Total freight value associated with the product.
+        tests:
+          - not_null
+
+      - name: total_revenue
+        description: Product revenue including freight.
+        tests:
+          - not_null
+
+      - name: average_item_price
+        description: Average product price across the product's order items.
+
+      - name: average_freight_value
+        description: Average freight value across the product's order items.
+
+      - name: product_name_length
+        description: Length of the product name.
+
+      - name: product_description_length
+        description: Length of the product description.
+
+      - name: product_photos_qty
+        description: Number of photos associated with the product.
+
+      - name: product_weight_g
+        description: Product weight in grams.
+
+      - name: product_length_cm
+        description: Product length in centimeters.
+
+      - name: product_height_cm
+        description: Product height in centimeters.
+
+      - name: product_width_cm
+        description: Product width in centimeters.

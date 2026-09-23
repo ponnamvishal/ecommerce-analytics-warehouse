@@ -1,0 +1,120 @@
+version: 2
+
+models:
+  - name: int_order_items_enriched
+    description: >
+      Order-item level intermediate model combining order, customer, product,
+      seller, and category information. Each row represents an individual
+      order item and includes financial measures used by downstream marts.
+
+    columns:
+      - name: order_id
+        description: Unique identifier of the order.
+        tests:
+          - not_null
+
+      - name: order_item_id
+        description: Sequential identifier of the item within an order.
+        tests:
+          - not_null
+
+      - name: customer_id
+        description: Identifier of the customer associated with the order.
+        tests:
+          - not_null
+
+      - name: customer_unique_id
+        description: Unique customer identifier across orders.
+
+      - name: customer_zip_code_prefix
+        description: Customer postal-code prefix.
+
+      - name: customer_city
+        description: Customer city.
+
+      - name: customer_state
+        description: Customer state.
+
+      - name: order_status
+        description: Current status of the order.
+
+      - name: order_purchase_timestamp
+        description: Timestamp when the order was placed.
+
+      - name: order_approved_at
+        description: Timestamp when the order payment was approved.
+
+      - name: order_delivered_carrier_date
+        description: Date when the order was handed to the carrier.
+
+      - name: order_delivered_customer_date
+        description: Date when the order was delivered to the customer.
+
+      - name: order_estimated_delivery_date
+        description: Estimated delivery date for the order.
+
+      - name: product_id
+        description: Unique identifier of the product.
+        tests:
+          - not_null
+
+      - name: product_category_name
+        description: Original product category name.
+
+      - name: product_category_name_english
+        description: English translation of the product category.
+
+      - name: category_name
+        description: >
+          Preferred product category name using the English translation when
+          available, otherwise the original category name or unknown.
+
+      - name: product_name_length
+        description: Length of the product name.
+
+      - name: product_description_length
+        description: Length of the product description.
+
+      - name: product_photos_qty
+        description: Number of product photos.
+
+      - name: product_weight_g
+        description: Product weight in grams.
+
+      - name: product_length_cm
+        description: Product length in centimeters.
+
+      - name: product_height_cm
+        description: Product height in centimeters.
+
+      - name: product_width_cm
+        description: Product width in centimeters.
+
+      - name: seller_id
+        description: Unique identifier of the seller.
+        tests:
+          - not_null
+
+      - name: seller_zip_code_prefix
+        description: Seller postal-code prefix.
+
+      - name: seller_city
+        description: Seller city.
+
+      - name: seller_state
+        description: Seller state.
+
+      - name: price
+        description: Product price for the order item.
+        tests:
+          - not_null
+
+      - name: freight_value
+        description: Freight value associated with the order item.
+        tests:
+          - not_null
+
+      - name: item_total_including_freight
+        description: Product price plus freight value for the order item.
+        tests:
+          - not_null
