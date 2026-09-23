@@ -34,17 +34,17 @@ The warehouse separates raw data, transformations, business logic, validation, a
 
 
 
-\- Python
+- Python
 
-\- SQL
+- SQL
 
-\- DuckDB
+- DuckDB
 
-\- dbt
+- dbt
 
-\- Power BI
+- Power BI
 
-\- Git / GitHub
+- Git / GitHub
 
 
 
@@ -60,23 +60,23 @@ The raw dataset contains information covering:
 
 
 
-\- Customers
+- Customers
 
-\- Orders
+- Orders
 
-\- Order items
+- Order items
 
-\- Payments
+- Payments
 
-\- Reviews
+- Reviews
 
-\- Products
+- Products
 
-\- Sellers
+- Sellers
 
-\- Geolocation
+- Geolocation
 
-\- Product category translations
+- Product category translations
 
 
 
@@ -116,23 +116,23 @@ Source tables include:
 
 
 
-\- customers
+- customers
 
-\- geolocation
+- geolocation
 
-\- orders
+- orders
 
-\- order\_items
+- order_items
 
-\- order\_payments
+- order_payments
 
-\- reviews
+- reviews
 
-\- products
+- products
 
-\- sellers
+- sellers
 
-\- category\_translation
+- category_translation
 
 
 
@@ -144,15 +144,15 @@ The intermediate model enriches order-item records by combining:
 
 
 
-\- Orders
+- Orders
 
-\- Customers
+- Customers
 
-\- Products
+- Products
 
-\- Sellers
+- Sellers
 
-\- Category translations
+- Category translations
 
 
 
@@ -176,23 +176,23 @@ Provides:
 
 
 
-\- Total orders
+- Total orders
 
-\- Delivered orders
+- Delivered orders
 
-\- Total items
+- Total items
 
-\- Product revenue
+- Product revenue
 
-\- Freight
+- Freight
 
-\- Total revenue
+- Total revenue
 
-\- Average order value
+- Average order value
 
-\- First and last order dates
+- First and last order dates
 
-\- Customer lifetime days
+- Customer lifetime days
 
 
 
@@ -204,17 +204,17 @@ Provides:
 
 
 
-\- Total orders
+- Total orders
 
-\- Total items
+- Total items
 
-\- Product revenue
+- Product revenue
 
-\- Freight
+- Freight
 
-\- Total revenue
+- Total revenue
 
-\- Average order value
+- Average order value
 
 
 
@@ -226,21 +226,21 @@ Provides:
 
 
 
-\- Total orders
+- Total orders
 
-\- Items sold
+- Items sold
 
-\- Product revenue
+- Product revenue
 
-\- Freight
+- Freight
 
-\- Total revenue
+- Total revenue
 
-\- Average item price
+- Average item price
 
-\- Average freight value
+- Average freight value
 
-\- Product and category attributes
+- Product and category attributes
 
 
 
@@ -248,13 +248,13 @@ Provides:
 
 
 
-\- \*\*Product revenue\*\* = item price only
+- **Product revenue** = item price only
 
-\- \*\*Freight revenue\*\* = freight value
+- **Freight revenue** = freight value
 
-\- \*\*Total revenue\*\* = item price + freight value
+- **Total revenue** = item price + freight value
 
-\- \*\*Payment value\*\* = recorded customer payment amount
+- **Payment value** = recorded customer payment amount
 
 
 
@@ -274,13 +274,13 @@ The final dbt test run passed:
 
 
 
-\- 59 data tests
+- 59 data tests
 
-\- 59 passed
+- 59 passed
 
-\- 0 warnings
+- 0 warnings
 
-\- 0 errors
+- 0 errors
 
 
 
@@ -288,17 +288,17 @@ Additional reconciliation checks validate:
 
 
 
-\- Raw → staging order counts
+- Raw → staging order counts
 
-\- Staging → mart product revenue
+- Staging → mart product revenue
 
-\- Staging → mart total revenue
+- Staging → mart total revenue
 
-\- Orders without item records
+- Orders without item records
 
-\- Payment values
+- Payment values
 
-\- Data-quality exceptions
+- Data-quality exceptions
 
 
 
@@ -310,17 +310,17 @@ Verified warehouse figures include:
 
 
 
-\- Raw orders: 99,441
+- Raw orders: 99,441
 
-\- Orders represented in order items: 98,666
+- Orders represented in order items: 98,666
 
-\- Orders without items: 775
+- Orders without items: 775
 
-\- Product revenue: Rs 13,591,643.70
+- Product revenue: Rs 13,591,643.70
 
-\- Freight: Rs 2,251,909.54
+- Freight: Rs 2,251,909.54
 
-\- Payment value: Rs 16,008,872.12
+- Payment value: Rs 16,008,872.12
 
 
 
@@ -344,9 +344,9 @@ The current audit identifies three exceptions:
 
 
 
-\- 2 invoiced orders
+- 2 invoiced orders
 
-\- 1 shipped order
+- 1 shipped order
 
 
 
@@ -366,15 +366,15 @@ The dashboard focuses on:
 
 
 
-\- Sales performance
+- Sales performance
 
-\- Customer analysis
+- Customer analysis
 
-\- Product performance
+- Product performance
 
-\- Revenue trends
+- Revenue trends
 
-\- KPI monitoring
+- KPI monitoring
 
 
 
@@ -382,7 +382,7 @@ The Power BI file is available under:
 
 
 
-`power bi/Ecommerce\_Customer\_Revenue\_Analytics\_Final.pbix`
+`power bi/Ecommerce_Customer_Revenue_Analytics_Final.pbix`
 
 
 
@@ -396,7 +396,7 @@ ecommerce-analytics-warehouse/
 
 │
 
-├── ecommerce\_analytics/
+├── ecommerce_analytics/
 
 │   ├── models/
 
@@ -414,21 +414,21 @@ ecommerce-analytics-warehouse/
 
 │   ├── scripts/
 
-│   └── dbt\_project.yml
+│   └── dbt_project.yml
 
 │
 
 ├── scripts/
 
-│   ├── load\_raw.py
+│   ├── load_raw.py
 
-│   └── reconcile\_orders.py
+│   └── reconcile_orders.py
 
 │
 
 ├── power bi/
 
-│   └── Ecommerce\_Customer\_Revenue\_Analytics\_Final.pbix
+│   └── Ecommerce_Customer_Revenue_Analytics_Final.pbix
 
 │
 
