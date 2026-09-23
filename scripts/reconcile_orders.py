@@ -1,6 +1,9 @@
+from pathlib import Path
+
 import duckdb
 
-DB_PATH = "warehouse.duckdb"
+PROJECT_ROOT = Path(__file__).resolve().parent.parent
+DB_PATH = PROJECT_ROOT / "warehouse.duckdb"
 
 con = duckdb.connect(DB_PATH)
 
@@ -132,32 +135,32 @@ print(f"Orders without items:        {orders_without_items:,}")
 print("\nREVENUE")
 print("-" * 50)
 
-print(f"Product revenue:             Rs {item_revenue:,.2f}")
-print(f"Freight revenue:             Rs {item_freight:,.2f}")
-print(f"Total item revenue:          Rs {item_total_revenue:,.2f}")
+print(f"Product revenue:             BRL {item_revenue:,.2f}")
+print(f"Freight revenue:             BRL {item_freight:,.2f}")
+print(f"Total item revenue:          BRL {item_total_revenue:,.2f}")
 
-print(f"Mart product revenue:        Rs {mart_product_revenue:,.2f}")
-print(f"Mart total revenue:          Rs {mart_total_revenue:,.2f}")
+print(f"Mart product revenue:        BRL {mart_product_revenue:,.2f}")
+print(f"Mart total revenue:          BRL {mart_total_revenue:,.2f}")
 
 print(
     f"Product revenue difference:  "
-    f"Rs {product_revenue_difference:,.2f}"
+    f"BRL {product_revenue_difference:,.2f}"
 )
 
 print(
     f"Total revenue difference:    "
-    f"Rs {total_revenue_difference:,.2f}"
+    f"BRL {total_revenue_difference:,.2f}"
 )
 
 
 print("\nPAYMENTS")
 print("-" * 50)
 
-print(f"Payment value:               Rs {payment_value:,.2f}")
+print(f"Payment value:               BRL {payment_value:,.2f}")
 
 print(
     f"Payment vs product revenue:  "
-    f"Rs {payment_vs_product_revenue:,.2f}"
+    f"BRL {payment_vs_product_revenue:,.2f}"
 )
 
 
