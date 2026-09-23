@@ -316,15 +316,15 @@ Verified warehouse figures include:
 
 - Orders without items: 775
 
-- Product revenue: Rs 13,591,643.70
+- Product revenue: BRL 13,591,643.70
 
-- Freight: Rs 2,251,909.54
+- Freight: BRL 2,251,909.54
 
-- Payment value: Rs 16,008,872.12
+- Payment value: BRL 16,008,872.12
 
 
 
-The staging-to-mart product revenue reconciliation has a difference of Rs 0.00.
+The staging-to-mart product revenue reconciliation has a difference of BRL 0.00.
 
 
 
@@ -389,56 +389,33 @@ The Power BI file is available under:
 ## Project Structure
 
 
-
 ```text
-
 ecommerce-analytics-warehouse/
 
-│
-
 ├── ecommerce_analytics/
-
 │   ├── models/
-
 │   │   ├── staging/
-
 │   │   ├── intermediate/
-
 │   │   ├── marts/
-
 │   │   └── audits/
-
 │   ├── macros/
-
 │   ├── tests/
-
-│   ├── scripts/
-
+│   ├── analyses/
+│   ├── seeds/
+│   ├── snapshots/
 │   └── dbt_project.yml
-
 │
-
 ├── scripts/
-
 │   ├── load_raw.py
-
 │   └── reconcile_orders.py
-
 │
-
+├── docs/
+│   └── architecture.md
+│
 ├── power bi/
-
 │   └── Ecommerce_Customer_Revenue_Analytics_Final.pbix
-
 │
-
-├── data/
-
-│   └── raw/
-
-│
-
+├── requirements.txt
 ├── .gitignore
-
 └── README.md
-
+```
