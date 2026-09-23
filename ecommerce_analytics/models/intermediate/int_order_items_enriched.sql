@@ -90,11 +90,11 @@ SELECT
 
     -- Order
     o.order_status,
-    CAST(o.order_purchase_timestamp AS TIMESTAMP) AS order_purchase_timestamp,
-    CAST(o.order_approved_at AS TIMESTAMP) AS order_approved_at,
-    CAST(o.order_delivered_carrier_date AS TIMESTAMP) AS order_delivered_carrier_date,
-    CAST(o.order_delivered_customer_date AS TIMESTAMP) AS order_delivered_customer_date,
-    CAST(o.order_estimated_delivery_date AS TIMESTAMP) AS order_estimated_delivery_date,
+    o.order_purchase_timestamp,
+    o.order_approved_at,
+    o.order_delivered_carrier_date,
+    o.order_delivered_customer_date,
+    o.order_estimated_delivery_date,
 
     -- Product
     oi.product_id,
